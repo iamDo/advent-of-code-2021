@@ -11,9 +11,6 @@ with open('.header.md', 'r') as header_file:
 for root, dirs, files in os.walk('.', topdown=True):
     dirs[:] = sorted([d for d in dirs if d not in excluded_dirs])
     files[:] = [f for f in files if f not in excluded_files]
-    #print('==============')
-    #print(root, dirs, files)
-    #print()
     if len(dirs) == 0:
         body = body + '# {}\n'.format(root[2:])
         for file in sorted(files):
