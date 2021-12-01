@@ -9,7 +9,7 @@ with open('.header.md', 'r') as header_file:
     header = header_file.readlines()
 
 for root, dirs, files in os.walk('.', topdown=True):
-    dirs[:] = [d for d in dirs if d not in excluded_dirs]
+    dirs[:] = sorted([d for d in dirs if d not in excluded_dirs])
     files[:] = [f for f in files if f not in excluded_files]
     #print('==============')
     #print(root, dirs, files)
