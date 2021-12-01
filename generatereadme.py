@@ -16,7 +16,7 @@ for root, dirs, files in os.walk('.', topdown=True):
     #print()
     if len(dirs) == 0:
         body = body + '# {}\n'.format(root[2:])
-        for file in files:
+        for file in sorted(files):
             body = body + '## {}\n'.format(file)
             with open(os.path.join(root, file), 'r') as soln_file:
                 body = body + '```py\n'

@@ -1,22 +1,6 @@
 # Advent of code 2021
 My solutions for 2021's advent of code. Probably going to be written almost entirely in Python.
 # puzzle-2
-## soln2.py
-```py
-measurements = []
-window_width = 3
-
-with open('./input', 'r') as input_file:
-    measurements = [int(line.strip()) for line in input_file.readlines()]
-
-def get_sum_from_index(index):
-    return sum([measurements[i] for i in range(index, index + window_width)])
-
-increments = sum([1 if get_sum_from_index(index + 1) > get_sum_from_index(index) else 0
-    for index in range(0, (len(measurements) - window_width))])
-
-print(increments)
-```
 ## soln1.py
 ```py
 read_lines = []
@@ -38,18 +22,23 @@ for i in range(1, orig_length - 1):
 
 print(increments)
 ```
-# puzzle-1
 ## soln2.py
 ```py
 measurements = []
+window_width = 3
+
 with open('./input', 'r') as input_file:
     measurements = [int(line.strip()) for line in input_file.readlines()]
 
-increments = sum([1 if measurements[index + 1] > measurements[index] else 0
-    for index in range(0, len(measurements) - 1)])
+def get_sum_from_index(index):
+    return sum([measurements[i] for i in range(index, index + window_width)])
+
+increments = sum([1 if get_sum_from_index(index + 1) > get_sum_from_index(index) else 0
+    for index in range(0, (len(measurements) - window_width))])
 
 print(increments)
 ```
+# puzzle-1
 ## soln1.py
 ```py
 read_lines = []
@@ -74,4 +63,15 @@ for line in read_lines:
 print(increments)
 print(decrements)
 print(no_change)
+```
+## soln2.py
+```py
+measurements = []
+with open('./input', 'r') as input_file:
+    measurements = [int(line.strip()) for line in input_file.readlines()]
+
+increments = sum([1 if measurements[index + 1] > measurements[index] else 0
+    for index in range(0, len(measurements) - 1)])
+
+print(increments)
 ```
