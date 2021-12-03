@@ -173,21 +173,6 @@ epsilon_rate = ''.join([ '0' if v == '1' else '1' for v in gamma_rate])
 print(int(gamma_rate, 2) * int(epsilon_rate ,2))
 ```
 # puzzle-6
-## input_simple
-```py
-00100
-11110
-10110
-10111
-10101
-01111
-00111
-11100
-10000
-11001
-00010
-01010
-```
 ## soln1.py
 ```py
 report = []

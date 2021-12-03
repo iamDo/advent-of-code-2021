@@ -3,7 +3,7 @@ import os
 header = ''
 body = ''
 excluded_dirs = ['.git']
-excluded_files = ['.gitignore', 'input']
+excluded_files = ['.gitignore', 'input', 'input_simple']
 
 with open('.header.md', 'r') as header_file:
     header = header_file.readlines()
